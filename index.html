@@ -402,7 +402,7 @@
     .tally-wrapper iframe {
       width: 100%;
       border: none;
-      min-height: 600px;
+      min-height: 1600px;
     }
 
     /* ── FOOTER ── */
@@ -653,24 +653,12 @@
 
       <div class="tally-wrapper">
         <iframe
-  id="clickup-form-iframe"
   src="https://forms.clickup.com/9008157632/p/f/8cev4y0-12717/G6EVKQNQCBH3AD1ENL/project-intake-form"
   width="100%"
+  height="1600"
   style="border: none; display: block;"
   title="ContinuityOS Client Intake Form">
 </iframe>
-        <script>
-          window.addEventListener('message', function(e) {
-            if (!e.origin.includes('clickup.com')) return;
-            var iframe = document.getElementById('clickup-form-iframe');
-            if (!iframe) return;
-            var data = e.data;
-            var h = (data && typeof data === 'object')
-              ? (data.height || data.frameHeight || data.scrollHeight)
-              : null;
-            if (h && h > 0) iframe.style.height = h + 'px';
-          });
-        </script>
       </div>
     </div>
   </section>
