@@ -6,6 +6,7 @@
   <title>ContinuityOS - AI Systems for Business Owners</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -714,7 +715,7 @@
           </div>
           <div>
             <label for="f-phone">Phone <span style="color:red">*</span></label>
-            <input type="tel" id="f-phone" required />
+            <input type="tel" id="f-phone" required maxlength="15" />
           </div>
           <div>
             <label for="f-industry">What best describes your industry? <span style="color:red">*</span></label>
@@ -759,6 +760,7 @@
             <textarea id="f-notes" rows="4" required></textarea>
           </div>
           <div>
+            <div class="g-recaptcha" data-sitekey="6LctUYQsAAAAAMuDqBvaWOk3WW1cI_pL2kJMnLNY" style="margin-bottom: 16px;"></div>
             <button type="submit" id="submit-btn" class="intake-submit">Start the Conversation</button>
           </div>
         </form>
@@ -810,7 +812,8 @@
         teamSize: document.getElementById('f-team').value,
         challenge: document.getElementById('f-challenge').value,
         referral: document.getElementById('f-referral').value,
-        notes: document.getElementById('f-notes').value
+        notes: document.getElementById('f-notes').value,
+        recaptchaToken: grecaptcha.getResponse()
       };
 
       const res = await fetch('/api/submit-form', {
