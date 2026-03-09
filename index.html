@@ -399,10 +399,53 @@
       text-align: left;
     }
 
-    .tally-wrapper iframe {
-      width: 100%;
-      border: none;
+    /* ── INTAKE FORM ── */
+    .intake-form { display: grid; gap: 18px; }
+    .intake-form label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
     }
+    .intake-form input,
+    .intake-form select,
+    .intake-form textarea {
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid rgba(5,52,139,0.2);
+      border-radius: 10px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .intake-form input:focus,
+    .intake-form select:focus,
+    .intake-form textarea:focus {
+      border-color: var(--blue);
+    }
+    .intake-form select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232768ff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    .intake-form textarea { resize: vertical; }
+    .intake-submit {
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 50px;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 6px;
+    }
+    .intake-submit:hover:not(:disabled) { background: var(--navy); transform: translateY(-1px); }
+    .intake-submit:disabled { opacity: 0.65; cursor: not-allowed; }
 
     /* ── FOOTER ── */
     footer {
@@ -651,33 +694,73 @@
       <p class="section-sub">Tell us a little about your business and where you'd like to see improvement. We'll be in touch to schedule a complimentary discovery call.</p>
 
       <div class="tally-wrapper">
-        <div id="clickup-form-container" style="width: 100%;"></div>
-        <script>
-          (function() {
-            var container = document.getElementById('clickup-form-container');
-            var iframe = document.createElement('iframe');
-            iframe.src = 'https://forms.clickup.com/9008157632/p/f/8cev4y0-12717/G6EVKQNQCBH3AD1ENL/project-intake-form';
-            iframe.style.width = '100%';
-            iframe.style.border = 'none';
-            iframe.style.display = 'block';
-            iframe.setAttribute('scrolling', 'no');
-            iframe.height = 1200;
-            window.addEventListener('message', function(e) {
-              if (e.data && typeof e.data === 'object') {
-                var h = e.data.height || e.data.frameHeight || e.data.scrollHeight;
-                if (h && h > 100) iframe.height = h + 50;
-              }
-              if (typeof e.data === 'string') {
-                try {
-                  var d = JSON.parse(e.data);
-                  var h = d.height || d.frameHeight || d.scrollHeight;
-                  if (h && h > 100) iframe.height = h + 50;
-                } catch(err) {}
-              }
-            });
-            container.appendChild(iframe);
-          })();
-        </script>
+        <form id="intake-form" class="intake-form">
+          <div>
+            <label for="f-name">Your Name</label>
+            <input type="text" id="f-name" required />
+          </div>
+          <div>
+            <label for="f-business">Business Name</label>
+            <input type="text" id="f-business" required />
+          </div>
+          <div>
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" required />
+          </div>
+          <div>
+            <label for="f-website">Website</label>
+            <input type="url" id="f-website" required />
+          </div>
+          <div>
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" required />
+          </div>
+          <div>
+            <label for="f-industry">What best describes your industry?</label>
+            <select id="f-industry" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Trades/Home Services</option>
+              <option>Financial Services</option>
+              <option>Professional Services</option>
+              <option>Retail/E-commerce</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-team">How many people work in your business?</label>
+            <select id="f-team" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Just me</option>
+              <option>2–5</option>
+              <option>6–20</option>
+              <option>21–50</option>
+              <option>50+</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-challenge">What's your biggest operational challenge right now?</label>
+            <select id="f-challenge" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Following up with leads</option>
+              <option>Managing admin tasks</option>
+              <option>Staying consistent on marketing</option>
+              <option>Coordinating my team</option>
+              <option>Tracking jobs/projects</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-referral">How did you hear about ContinuityOS?</label>
+            <input type="text" id="f-referral" required />
+          </div>
+          <div>
+            <label for="f-notes">Anything else you'd like us to know before your discovery call?</label>
+            <textarea id="f-notes" rows="4" required></textarea>
+          </div>
+          <div>
+            <button type="submit" id="submit-btn" class="intake-submit">Start the Conversation</button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -709,5 +792,40 @@
     <p class="footer-copyright">Copyright &copy; 2026 ContinuityOS. All Rights Reserved.</p>
   </footer>
 
+  <script>
+    document.getElementById('intake-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const data = {
+        name: document.getElementById('f-name').value,
+        business: document.getElementById('f-business').value,
+        email: document.getElementById('f-email').value,
+        website: document.getElementById('f-website').value,
+        phone: document.getElementById('f-phone').value,
+        industry: document.getElementById('f-industry').value,
+        teamSize: document.getElementById('f-team').value,
+        challenge: document.getElementById('f-challenge').value,
+        referral: document.getElementById('f-referral').value,
+        notes: document.getElementById('f-notes').value
+      };
+
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        document.getElementById('intake-form').innerHTML = '<div style="text-align:center;padding:60px 40px;"><h3>Thank you!</h3><p>We\'ve received your information and will be in touch within 24 hours to confirm your discovery call.</p></div>';
+      } else {
+        btn.textContent = 'Start the Conversation';
+        btn.disabled = false;
+        alert('Something went wrong — please try again or email us directly.');
+      }
+    });
+  </script>
 </body>
 </html>
