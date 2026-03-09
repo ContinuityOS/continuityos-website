@@ -402,7 +402,6 @@
     .tally-wrapper iframe {
       width: 100%;
       border: none;
-      height: 2000px;
     }
 
     /* ── FOOTER ── */
@@ -652,12 +651,33 @@
       <p class="section-sub">Tell us a little about your business and where you'd like to see improvement. We'll be in touch to schedule a complimentary discovery call.</p>
 
       <div class="tally-wrapper">
-        <iframe
-  src="https://forms.clickup.com/9008157632/p/f/8cev4y0-12717/G6EVKQNQCBH3AD1ENL/project-intake-form"
-  width="100%"
-  style="border: none; display: block;"
-  title="ContinuityOS Client Intake Form">
-</iframe>
+        <div id="clickup-form-container" style="width: 100%;"></div>
+        <script>
+          (function() {
+            var container = document.getElementById('clickup-form-container');
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://forms.clickup.com/9008157632/p/f/8cev4y0-12717/G6EVKQNQCBH3AD1ENL/project-intake-form';
+            iframe.style.width = '100%';
+            iframe.style.border = 'none';
+            iframe.style.display = 'block';
+            iframe.setAttribute('scrolling', 'no');
+            iframe.height = 1200;
+            window.addEventListener('message', function(e) {
+              if (e.data && typeof e.data === 'object') {
+                var h = e.data.height || e.data.frameHeight || e.data.scrollHeight;
+                if (h && h > 100) iframe.height = h + 50;
+              }
+              if (typeof e.data === 'string') {
+                try {
+                  var d = JSON.parse(e.data);
+                  var h = d.height || d.frameHeight || d.scrollHeight;
+                  if (h && h > 100) iframe.height = h + 50;
+                } catch(err) {}
+              }
+            });
+            container.appendChild(iframe);
+          })();
+        </script>
       </div>
     </div>
   </section>
