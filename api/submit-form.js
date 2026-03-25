@@ -19,10 +19,24 @@ export default async function handler(req, res) {
     })
   });
 
-  if (response.ok) {
-    res.status(200).json({ success: true });
-  } else {
+  if (!response.ok) {
     const error = await response.text();
-    res.status(500).json({ success: false, error });
+    return res.status(500).json({ success: false, error });
   }
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      from: 'ContinuityOS <noreply@continuityos.io>',
+      to: 'tara@continuityos.io',
+      subject: `New discovery call request from ${name} — ${business}`,
+      text: `New intake form submission:\n\nName: ${name}\nBusiness: ${business}\nEmail: ${email}\nWebsite: ${website}\nPhone: ${phone}\nIndustry: ${industry}\nTeam Size: ${teamSize}\nBiggest Challenge: ${challenge}\nHow They Heard About Us: ${referral}\nAdditional Notes: ${notes}`
+    })
+  });
+
+  res.status(200).json({ success: true });
 }
