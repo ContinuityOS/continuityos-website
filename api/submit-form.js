@@ -40,8 +40,8 @@ Additional Notes: ${notes}`;
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'ContinuityOS <noreply@continuityos.io>',
-        to: 'tara@continuityos.io',
+        from: 'ContinuityOS <onboarding@resend.dev>',
+        to: 'tara@brand-love.ca',
         subject: `New discovery call request from ${name} — ${business}`,
         text: emailBody
       })
