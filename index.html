@@ -215,6 +215,9 @@
       gap: 24px;
       margin-top: 56px;
     }
+    @media (min-width: 940px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
 
     .service-card {
       background: var(--white);
@@ -534,6 +537,385 @@
       .hero { padding-top: 60px; }
       .tally-wrapper { padding: 28px 20px; }
     }
+
+    /* ── WEBSITE & BRAND AUDIT ── */
+    .audit {
+      background: linear-gradient(165deg, #04173f 0%, #062a73 55%, #05348b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .audit::before {
+      content: '';
+      position: absolute;
+      width: 620px; height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(39,104,255,0.22) 0%, transparent 70%);
+      top: -240px; right: -160px;
+      pointer-events: none;
+    }
+    .audit-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .audit-lead .section-label { color: #7aaeff; }
+    .audit-title {
+      font-size: clamp(2rem, 3.6vw, 2.9rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+    .audit-sub {
+      font-size: 1.02rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+    .audit-sub strong { color: rgba(255,255,255,0.95); font-weight: 600; }
+    .audit-cta {
+      display: inline-block;
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 16px 38px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      margin-top: 14px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+      box-shadow: 0 10px 34px rgba(2,11,38,0.4);
+    }
+    .audit-cta:hover { background: var(--blue); color: var(--white); transform: translateY(-3px); box-shadow: 0 16px 44px rgba(2,11,38,0.5); }
+    .audit-note {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      margin-top: 16px;
+      letter-spacing: 0.01em;
+    }
+    .audit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 40px 38px;
+      backdrop-filter: blur(8px);
+    }
+    .audit-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .audit-card-head h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7aaeff;
+    }
+    .audit-price {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      background: rgba(39,104,255,0.16);
+      border: 1px solid rgba(122,174,255,0.35);
+      color: var(--white);
+      padding: 7px 16px;
+      border-radius: 50px;
+    }
+    .audit-price b { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+    .audit-price span { font-size: 0.68rem; font-weight: 500; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; }
+    .audit-list { list-style: none; }
+    .audit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+    }
+    .audit-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .audit-list li:first-child { padding-top: 0; }
+    .audit-check {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: rgba(39,104,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .audit-check svg { width: 12px; height: 12px; stroke: #7aaeff; }
+
+    /* ── WEBSITES BUILT WITH AI (SHOWCASE) ── */
+    .showcase {
+      background: #03102b;
+      position: relative;
+      overflow: hidden;
+    }
+    .showcase::before {
+      content: '';
+      position: absolute;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(39,104,255,0.14) 0%, transparent 70%);
+      bottom: -260px; left: -140px;
+      pointer-events: none;
+    }
+    .showcase-head { position: relative; z-index: 2; max-width: 620px; }
+    .showcase-head .section-label { color: var(--blue); }
+    .showcase-head .section-title { color: var(--white); }
+    .showcase-head .section-sub { color: rgba(255,255,255,0.62); }
+    .showcase-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 30px;
+      margin-top: 56px;
+    }
+    .showcase-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .showcase-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+      border-color: rgba(39,104,255,0.45);
+    }
+    .showcase-frame {
+      position: relative;
+      background: #0a1d44;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .showcase-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.25);
+    }
+    .showcase-bar span {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+    }
+    .showcase-bar .bar-url {
+      width: auto; height: auto;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      margin-left: 10px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.01em;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .showcase-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+    .showcase-card:hover .showcase-thumb { transform: scale(1.04); }
+    .showcase-body { padding: 28px 30px 30px; display: flex; flex-direction: column; flex: 1; }
+    .showcase-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .showcase-url {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .showcase-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.65;
+      margin-bottom: 26px;
+      flex: 1;
+    }
+    .view-site-btn {
+      align-self: flex-start;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    }
+    .view-site-btn svg { width: 15px; height: 15px; }
+    .view-site-btn:hover { background: var(--white); color: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(39,104,255,0.35); }
+
+    /* ── SITE PREVIEW MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(3,10,28,0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4vh 4vw;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.32s ease, visibility 0.32s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-window {
+      width: 100%;
+      max-width: 1180px;
+      height: 92vh;
+      background: #0a1d44;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+      transform: translateY(16px) scale(0.985);
+      transition: transform 0.32s cubic-bezier(0.16,1,0.3,1);
+    }
+    .modal-overlay.open .modal-window { transform: translateY(0) scale(1); }
+    .modal-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 13px 18px;
+      background: rgba(0,0,0,0.28);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-shrink: 0;
+    }
+    .modal-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .modal-url {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .modal-url:hover { color: #7aaeff; }
+    .modal-url svg { width: 13px; height: 13px; }
+    .modal-close {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.85);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .modal-close:hover { background: var(--blue); color: var(--white); transform: rotate(90deg); }
+    .modal-close svg { width: 16px; height: 16px; }
+    .modal-frame-wrap { flex: 1; position: relative; background: #fff; }
+    .modal-frame-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .modal-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+      padding: 40px;
+      background: #0a1d44;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      font-weight: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .modal-fallback.show { opacity: 1; pointer-events: auto; }
+    .modal-fallback a {
+      color: var(--white);
+      background: var(--blue);
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .modal-fallback a:hover { background: var(--navy); }
+    body.modal-locked { overflow: hidden; }
+
+    @media (max-width: 880px) {
+      .audit-inner { grid-template-columns: 1fr; gap: 40px; }
+      .audit-sub { max-width: none; }
+    }
+    @media (max-width: 600px) {
+      .showcase-grid { grid-template-columns: 1fr; }
+      .modal-overlay { padding: 0; }
+      .modal-window { height: 100vh; max-width: none; border-radius: 0; border: none; }
+      .modal-url { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -553,7 +935,7 @@
     <div class="hero-inner">
       <div class="hero-badge">AI Consulting for Business Owners</div>
       <h1>Smarter Systems.<br /><span>Measurable Growth.</span></h1>
-      <p>ContinuityOS helps small and medium-sized businesses implement AI-driven systems and automation solutions that cut operational drag, accelerate revenue, and free owners to focus on what matters.</p>
+      <p>ContinuityOS helps small and medium-sized businesses build a credible online presence and run on AI-driven systems and automation. The result is less operational drag, more customers, and owners free to focus on what matters.</p>
       <a href="#contact" class="hero-cta">Start the Conversation</a>
     </div>
   </section>
@@ -562,27 +944,27 @@
   <section class="services" id="services">
     <div class="section-label">What We Do</div>
     <div class="section-title">An end-to-end approach<br />to business efficiency</div>
-    <p class="section-sub">We assess your current operations, identify high-impact automation opportunities, then implement and integrate the right tools - so your business runs better without adding headcount.</p>
+    <p class="section-sub">We assess how your business runs and how it shows up online, then put the right systems, automation, and brand presence in place. You operate leaner and win more customers, without adding headcount.</p>
     <div class="services-grid">
 
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#2768ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         </div>
-        <h3>AI Systems Implementation</h3>
-        <p>We identify the right AI tools for your business - from voice agents and CRM automation to content creation - and deploy them end-to-end so they actually get used.</p>
+        <h3>Website &amp; Brand Audit</h3>
+        <p>The essential first step. We diagnose exactly where your website and brand are costing you trust, traffic, and customers, then hand you a prioritized plan to fix it. A flat $499, and the foundation everything else is built on. Full breakdown below.</p>
       </div>
 
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#2768ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>
           </svg>
         </div>
-        <h3>Workflow Automation</h3>
-        <p>We map your existing workflows, find the friction, and connect your tools using platforms like Make, Zapier, and n8n - eliminating repetitive manual tasks across departments.</p>
+        <h3>Website Design &amp; Build</h3>
+        <p>A credible, converting website built in collaboration with AI. We bring real human craft to the copy, experience, and imagery, so it feels established from day one. Scoped from your audit, starting at $999.</p>
       </div>
 
       <div class="service-card">
@@ -592,7 +974,27 @@
           </svg>
         </div>
         <h3>Tech Stack Consulting</h3>
-        <p>From CRM and lead generation to digital advertising and operations - we build you a curated, integrated tech stack that fits your business model, budget, and team size.</p>
+        <p>From CRM and lead generation to advertising and operations, we build one integrated stack that fits your model, budget, and team size. No more paying for overlapping tools that do not talk to each other.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2768ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+          </svg>
+        </div>
+        <h3>AI Systems Implementation</h3>
+        <p>We find the AI tools that fit how your business actually runs, from voice agents and CRM automation to content creation, then deploy them end to end. You get systems your team adopts on day one, not another subscription nobody opens.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2768ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Workflow Automation &amp; Optimization</h3>
+        <p>We map your workflows, find the friction, and connect your tools with platforms like Make, Zapier, and n8n. Then we keep tuning. The result is hours of manual work removed every week, and processes that get sharper as your business grows.</p>
       </div>
 
       <div class="service-card">
@@ -602,8 +1004,101 @@
           </svg>
         </div>
         <h3>SMB Growth Strategy</h3>
-        <p>Strategic consulting for business owners preparing to scale - covering go-to-market positioning, operational structure, and the systems needed to grow without chaos.</p>
+        <p>Strategic consulting for owners getting ready to scale. We cover positioning, operational structure, and the systems you need so growth adds revenue instead of chaos.</p>
       </div>
+
+    </div>
+  </section>
+
+  <!-- WEBSITE & BRAND AUDIT -->
+  <section class="audit" id="audit">
+    <div class="audit-inner">
+      <div class="audit-lead">
+        <div class="section-label">Start Here</div>
+        <h2 class="audit-title">The first step to a website that earns trust and converts</h2>
+        <p class="audit-sub">Most websites lose business quietly. Slow load times, unclear messaging, and a brand that does not match the quality of the work behind it. <strong>Before we build or rebuild anything, we run a complete Website and Brand Audit.</strong></p>
+        <p class="audit-sub">It is the honest, plain-English baseline every credible, converting online presence is built on. You learn exactly where you stand and what to fix first, so every dollar you spend after that goes to the right place.</p>
+        <p class="audit-sub">Every audit is run personally by our founder, drawing on <strong>nearly 20 years of marketing and brand experience.</strong> That judgment is what turns a list of problems into a plan that actually moves the needle.</p>
+        <a class="audit-cta" href="https://calendly.com/continuityos/free-30-minute-intro-call" target="_blank" rel="noopener">Book a Free Intro Call</a>
+        <p class="audit-note">The audit is a flat $499. Book a free 15 minute intro call to see if it is the right fit. No pressure, no obligation.</p>
+      </div>
+      <div class="audit-card">
+        <div class="audit-card-head">
+          <h3>What you walk away with</h3>
+          <div class="audit-price"><b>$499</b><span>Flat fee</span></div>
+        </div>
+        <ul class="audit-list">
+          <li>
+            <span class="audit-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            A clear picture of where your website is quietly losing business
+          </li>
+          <li>
+            <span class="audit-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            An honest read on how your brand shows up next to competitors
+          </li>
+          <li>
+            <span class="audit-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Where your messaging is costing you trust and conversions
+          </li>
+          <li>
+            <span class="audit-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            The real gaps between your current site and one that performs
+          </li>
+          <li>
+            <span class="audit-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            A prioritized action plan, in plain English, of what to fix first
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITES BUILT WITH AI -->
+  <section class="showcase" id="work">
+    <div class="showcase-head">
+      <div class="section-label">Our Work</div>
+      <div class="section-title">Websites built in collaboration with AI</div>
+      <p class="section-sub">We use AI to move fast, then do the human work that actually makes the difference: shaping copy that sounds like the brand, making sure the experience flows, and choosing imagery with intent. The best of both worlds, established-looking sites without the agency timeline or price tag.</p>
+    </div>
+    <div class="showcase-grid">
+
+      <article class="showcase-card">
+        <div class="showcase-frame">
+          <div class="showcase-bar">
+            <span></span><span></span><span></span>
+            <span class="bar-url">brandlovexm.com</span>
+          </div>
+          <img class="showcase-thumb" src="showcase-brandlovexm.png" alt="BrandLoveXM website preview" />
+        </div>
+        <div class="showcase-body">
+          <h3 class="showcase-name">BrandLoveXM</h3>
+          <div class="showcase-url">brandlovexm.com</div>
+          <p class="showcase-desc">Experiential marketing and event production agency. A bold, full-service site built to match the scale of the experiences they create.</p>
+          <button class="view-site-btn" data-url="https://brandlovexm.com" data-title="BrandLoveXM" data-display="brandlovexm.com">
+            View Site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-frame">
+          <div class="showcase-bar">
+            <span></span><span></span><span></span>
+            <span class="bar-url">saranicholasandthelastdragon.com</span>
+          </div>
+          <img class="showcase-thumb" src="showcase-saradragon.png" alt="Sara Nicholas and the Last Dragon website preview" />
+        </div>
+        <div class="showcase-body">
+          <h3 class="showcase-name">Sara Nicholas and the Last Dragon</h3>
+          <div class="showcase-url">saranicholasandthelastdragon.com</div>
+          <p class="showcase-desc">Author website for a children's book. A warm, story-driven site that brings the world of the book to life and helps drive book sales.</p>
+          <button class="view-site-btn" data-url="https://www.saranicholasandthelastdragon.com/" data-title="Sara Nicholas and the Last Dragon" data-display="saranicholasandthelastdragon.com">
+            View Site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </button>
+        </div>
+      </article>
 
     </div>
   </section>
@@ -613,34 +1108,34 @@
     <div class="how-inner">
       <div>
         <div class="section-label">Our Process</div>
-        <div class="section-title">From audit to implementation - we handle the complexity</div>
+        <div class="section-title">What working with us looks like</div>
         <div class="how-steps">
           <div class="how-step">
             <div class="step-num">01</div>
             <div class="step-text">
-              <h4>Discovery & Audit</h4>
-              <p>We start with a structured review of your current tools, workflows, and pain points to identify where AI can create the highest return.</p>
+              <h4>Discovery & Diagnosis</h4>
+              <p>We start by learning how your business runs today, your tools, your workflows, and where time and revenue are quietly leaking. You leave with a clear picture of where to start.</p>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">02</div>
             <div class="step-text">
               <h4>System Design</h4>
-              <p>We map the ideal tech stack and automation architecture for your business - built around how you actually operate, not a generic template.</p>
+              <p>We map the right tech stack and automation architecture around how you actually operate, never a generic template.</p>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">03</div>
             <div class="step-text">
               <h4>Implementation & Integration</h4>
-              <p>We configure, connect, and deploy your tools - including onboarding your team so adoption is seamless from day one.</p>
+              <p>We configure, connect, and deploy everything, then onboard your team so adoption is seamless from day one.</p>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">04</div>
             <div class="step-text">
               <h4>Optimization & Support</h4>
-              <p>As your business evolves, we continue to refine your systems and introduce new AI solutions that keep you ahead of the curve.</p>
+              <p>As your business evolves, we keep refining your systems and introduce new AI where it earns its place, so you stay ahead.</p>
             </div>
           </div>
         </div>
@@ -648,11 +1143,11 @@
 
       <div class="how-visual">
         <h3>Built for the operators, not the enterprise.</h3>
-        <p>Most AI consulting is priced for Fortune 500 companies. ContinuityOS was purpose-built for the business owner with 2–50 employees who wants enterprise-grade efficiency without the enterprise price tag.</p>
+        <p>Most AI consulting is priced for Fortune 500 companies. ContinuityOS is purpose-built for the owner with 2 to 50 employees who wants enterprise-grade efficiency without the enterprise price tag.</p>
         <div class="stat-row">
           <div class="stat"><h4>7+</h4><p>Tool Categories</p></div>
           <div class="stat"><h4>25+</h4><p>Vetted Platforms</p></div>
-          <div class="stat"><h4>15+</h4><p>Years Experience</p></div>
+          <div class="stat"><h4>20</h4><p>Years Experience</p></div>
         </div>
       </div>
     </div>
@@ -671,7 +1166,7 @@
         <div class="section-title">Meet Tara McIlroy</div>
         <div class="about-name">Founder, ContinuityOS</div>
 
-        <p>Tara McIlroy is a serial entrepreneur, startup founder, marketing strategist, and senior event producer, with over 15 years of experience helping businesses grow through strategic branding, marketing, and operational transformation.</p>
+        <p>Tara McIlroy is a serial entrepreneur, startup founder, marketing strategist, and senior event producer, with nearly 20 years of experience helping businesses grow through strategic branding, marketing, and operational transformation.</p>
 
         <p>As the founder of ContinuityOS, Tara brings her hands-on, business-owner mindset to the world of AI and automation - helping small and medium-sized businesses implement practical, scalable systems that reduce overhead, capture more leads, and run more efficiently without overwhelming their teams.</p>
 
@@ -733,9 +1228,9 @@
             <select id="f-team" required>
               <option value="" disabled selected>Select an option</option>
               <option>Just me</option>
-              <option>2–5</option>
-              <option>6–20</option>
-              <option>21–50</option>
+              <option>2-5</option>
+              <option>6-20</option>
+              <option>21-50</option>
               <option>50+</option>
             </select>
           </div>
@@ -827,7 +1322,7 @@
       } else {
         btn.textContent = 'Start the Conversation';
         btn.disabled = false;
-        alert('Something went wrong — please try again or email us directly.');
+        alert('Something went wrong. Please try again or email us directly.');
       }
     });
   </script>
@@ -847,5 +1342,88 @@
     };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <!-- SITE PREVIEW MODAL -->
+  <div class="modal-overlay" id="site-modal" role="dialog" aria-modal="true" aria-label="Website preview">
+    <div class="modal-window">
+      <div class="modal-bar">
+        <span class="modal-title" id="modal-title">Preview</span>
+        <a class="modal-url" id="modal-open" href="#" target="_blank" rel="noopener">
+          Open in new tab
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <button class="modal-close" id="modal-close" aria-label="Close preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-frame-wrap">
+        <iframe id="modal-frame" title="Website preview" referrerpolicy="no-referrer"></iframe>
+        <div class="modal-fallback" id="modal-fallback">
+          <p>This site cannot be previewed inside the page.</p>
+          <a id="fallback-link" href="#" target="_blank" rel="noopener">Open it in a new tab</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const modal = document.getElementById('site-modal');
+      const frame = document.getElementById('modal-frame');
+      const titleEl = document.getElementById('modal-title');
+      const openLink = document.getElementById('modal-open');
+      const fallback = document.getElementById('modal-fallback');
+      const fallbackLink = document.getElementById('fallback-link');
+      let fallbackTimer;
+
+      function openModal(url, title) {
+        titleEl.textContent = title;
+        openLink.href = url;
+        fallbackLink.href = url;
+        fallback.classList.remove('show');
+        frame.src = url;
+        document.body.classList.add('modal-locked');
+        modal.classList.add('open');
+        // If the site blocks embedding, it never fires load. Offer a fallback.
+        clearTimeout(fallbackTimer);
+        fallbackTimer = setTimeout(function () {
+          if (!frame.dataset.loaded) fallback.classList.add('show');
+        }, 3500);
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.classList.remove('modal-locked');
+        clearTimeout(fallbackTimer);
+        // Clear after the fade so the iframe stops loading without a visible flash.
+        setTimeout(function () {
+          frame.src = 'about:blank';
+          frame.removeAttribute('data-loaded');
+          fallback.classList.remove('show');
+        }, 320);
+      }
+
+      frame.addEventListener('load', function () {
+        if (frame.src && frame.src !== 'about:blank') {
+          frame.dataset.loaded = '1';
+          fallback.classList.remove('show');
+        }
+      });
+
+      document.querySelectorAll('.view-site-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.dataset.url, btn.dataset.title);
+        });
+      });
+
+      document.getElementById('modal-close').addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>
