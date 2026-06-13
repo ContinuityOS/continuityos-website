@@ -664,6 +664,34 @@
     }
     .audit-check svg { width: 12px; height: 12px; stroke: #7aaeff; }
 
+    /* ── CUSTOM CLIENT PORTAL ── */
+    .portal { background: var(--white); }
+    .portal-inner { max-width: 760px; }
+    .portal .section-sub { max-width: 760px; margin-bottom: 18px; }
+    .portal-subhead {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin: 40px 0 20px;
+    }
+    .portal-video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .portal-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* ── WEBSITES BUILT WITH AI (SHOWCASE) ── */
     .showcase {
       background: #03102b;
@@ -936,7 +964,7 @@
       <div class="hero-badge">AI Consulting for Business Owners</div>
       <h1>Smarter Systems.<br /><span>Measurable Growth.</span></h1>
       <p>ContinuityOS helps small and medium-sized businesses build a credible online presence and run on AI-driven systems and automation. The result is less operational drag, more customers, and owners free to focus on what matters.</p>
-      <a href="#contact" class="hero-cta">Start the Conversation</a>
+      <a href="https://calendly.com/continuityos/free-15-minute-intro-call" target="_blank" rel="noopener" class="hero-cta">Book a Free Intro Call</a>
     </div>
   </section>
 
@@ -954,7 +982,7 @@
           </svg>
         </div>
         <h3>Website &amp; Brand Audit</h3>
-        <p>The essential first step. We diagnose exactly where your website and brand are costing you trust, traffic, and customers, then hand you a prioritized plan to fix it. A flat $499, and the foundation everything else is built on. Full breakdown below.</p>
+        <p>The essential first step. We diagnose exactly where your website and brand are costing you trust, traffic, and customers, then hand you a prioritized plan to fix it. A flat $499 USD, and the foundation everything else is built on. Full breakdown below.</p>
       </div>
 
       <div class="service-card">
@@ -964,7 +992,7 @@
           </svg>
         </div>
         <h3>Website Design &amp; Build</h3>
-        <p>A credible, converting website built in collaboration with AI. We bring real human craft to the copy, experience, and imagery, so it feels established from day one. Scoped from your audit, starting at $999.</p>
+        <p>A credible, converting website built in collaboration with AI. We bring real human craft to the copy, experience, and imagery, so it feels established from day one. Scoped from your audit, starting at $1,297 USD.</p>
       </div>
 
       <div class="service-card">
@@ -1019,13 +1047,13 @@
         <p class="audit-sub">Most websites lose business quietly. Slow load times, unclear messaging, and a brand that does not match the quality of the work behind it. <strong>Before we build or rebuild anything, we run a complete Website and Brand Audit.</strong></p>
         <p class="audit-sub">It is the honest, plain-English baseline every credible, converting online presence is built on. You learn exactly where you stand and what to fix first, so every dollar you spend after that goes to the right place.</p>
         <p class="audit-sub">Every audit is run personally by our founder, drawing on <strong>nearly 20 years of marketing and brand experience.</strong> That judgment is what turns a list of problems into a plan that actually moves the needle.</p>
-        <a class="audit-cta" href="https://calendly.com/continuityos/free-30-minute-intro-call" target="_blank" rel="noopener">Book a Free Intro Call</a>
-        <p class="audit-note">The audit is a flat $499. Book a free 15 minute intro call to see if it is the right fit. No pressure, no obligation.</p>
+        <a class="audit-cta" href="https://calendly.com/continuityos/free-15-minute-intro-call" target="_blank" rel="noopener">Book a Free Intro Call</a>
+        <p class="audit-note">The audit is a flat $499 USD. Book a free 15 minute intro call to see if it is the right fit. No pressure, no obligation.</p>
       </div>
       <div class="audit-card">
         <div class="audit-card-head">
           <h3>What you walk away with</h3>
-          <div class="audit-price"><b>$499</b><span>Flat fee</span></div>
+          <div class="audit-price"><b>$499 USD</b><span>Flat fee</span></div>
         </div>
         <ul class="audit-list">
           <li>
@@ -1054,6 +1082,20 @@
   </section>
 
   <!-- WEBSITES BUILT WITH AI -->
+  <!-- CUSTOM CLIENT PORTAL -->
+  <section class="portal" id="portal">
+    <div class="portal-inner">
+      <div class="section-label">Custom Client Portal</div>
+      <h2 class="section-title">Introducing the Custom Client Portal</h2>
+      <p class="section-sub">When you build your website with ContinuityOS, you get more than a site. You get control. Our Custom Client Portal add-on gives you a simple, secure dashboard to update your own website content: swap out text, refresh images, and keep your site current without touching a single line of code and without waiting on anyone.</p>
+      <p class="section-sub">Prefer to hand it off? We offer a managed update option so you can send us the changes and we handle everything. Choose a monthly update package or simple one-off pricing, whatever fits how often your site changes.</p>
+      <h3 class="portal-subhead">See the portal in action</h3>
+      <div class="portal-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/URVjPqQNT0g?rel=0&modestbranding=1&playsinline=1" title="Admin Dashboard Overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="showcase" id="work">
     <div class="showcase-head">
       <div class="section-label">Our Work</div>
@@ -1094,6 +1136,25 @@
           <div class="showcase-url">saranicholasandthelastdragon.com</div>
           <p class="showcase-desc">Author website for a children's book. A warm, story-driven site that brings the world of the book to life and helps drive book sales.</p>
           <button class="view-site-btn" data-url="https://www.saranicholasandthelastdragon.com/" data-title="Sara Nicholas and the Last Dragon" data-display="saranicholasandthelastdragon.com">
+            View Site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-frame">
+          <div class="showcase-bar">
+            <span></span><span></span><span></span>
+            <span class="bar-url">simplynourishednutrition.ca</span>
+          </div>
+          <img class="showcase-thumb" src="showcase-simplynourished.png" alt="Simply Nourished Nutrition website preview" />
+        </div>
+        <div class="showcase-body">
+          <h3 class="showcase-name">Simply Nourished Nutrition</h3>
+          <div class="showcase-url">Website Design and Build</div>
+          <p class="showcase-desc">Custom nutrition coaching website built and deployed on GitHub and Vercel. Clean, mobile-first design with service pages and booking integration.</p>
+          <button class="view-site-btn" data-url="https://www.simplynourishednutrition.ca/" data-title="Simply Nourished Nutrition" data-display="simplynourishednutrition.ca">
             View Site
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </button>
